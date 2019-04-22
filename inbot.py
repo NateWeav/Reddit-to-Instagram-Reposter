@@ -8,15 +8,15 @@ from Naked.toolshed.shell import execute_js
 
 subreddits = "memes"
 hashtags = "#reddit #memes #meme #memes #bestmemes #instamemes #funny #funnymemes #dankmemes #offensivememes #edgymemes #spicymemes #nichememes #memepage #funniestmemes #dank #memesdaily #jokes #memesrlife #memestar #memesquad #humor #lmao #igmemes #lol #memeaccount #memer #relatablememes #funnyposts #sillymemes #nichememe #memetime"
-posts_per_day = 5000
+posts_per_day = 24
 
 
 def bot_login():
     print('Logging in...')
-    r = praw.Reddit(username='YOUR USERNAME HERE',
-                    password='YOUR PASSWORD HERE',
-                    client_id='YOUR CLIENT ID HERE',
-                    client_secret='YOUR CLIENT SECRET HERE',
+    r = praw.Reddit(username='YOUR REDDIT USERNAME HERE',
+                    password='YOUR REDDIT PASSWORD HERE',
+                    client_id='YOUR REDDIT CLIENT ID HERE',
+                    client_secret='YOUR REDDIT CLIENT SECRET HERE',
                     user_agent='A Bot that reposts Reddit Posts onto Instagram')
     print('Logged in as user: "'+str(r.user.me())+'"')
     print("------------------------------------------------------------------")
@@ -24,7 +24,6 @@ def bot_login():
 
 
 def run_bot(r, posts_found):
-    # goes though hot posts of the day
     for i in range(int(posts_per_day*1.25+5)):
         print("Serching for top post in r/"+subreddits)
         try:
@@ -63,8 +62,7 @@ def run_bot(r, posts_found):
                 with open("Memory/Caption.txt", "a") as f:
                     f.write(submission.title)
                 with open("Memory/Caption2.txt", "a") as f:
-                    f.write("\n-\nmirrored from a post on r/"+subreddits+" by u/"+str(submission.author)+":https://reddit.com/"+hi + "\n using a bot made by @nateweav_ :)\n"
-                            " \n\n•\n•\n•\n•\n•\n•\n•\n•\n\n" + hashtags)
+                    f.write(" - repost of u/"+str(submission.author)+"'s post on r/"+subreddits+" :)")
                 print("Saved post id")
                 print("---------------------------------------------------")
                 print("Posting to Instagram")
