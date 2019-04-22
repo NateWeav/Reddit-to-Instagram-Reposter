@@ -3,7 +3,7 @@
 ## Reposts hot posts from any subreddit onto instagram
 
 ### How to use:
-* Download package from github
+* Download files from github
 * Install all the requirements (see below)
 * Fill in your Reddit username, password, client_id, client_secret on inbot.py (line 16-19) if you don't have a client_id click [here](https://ssl.reddit.com/prefs/apps/ "Set up bot")
 * Fill in the subreddit you want to post to, the amount of posts per day and the hashtags on inbot.py (line 9-11)
@@ -23,6 +23,4 @@ If you have any questions feel free to ask and fill free to add stuff as it is o
 
 
 ### ToDo:
-* Allow it to post gifs
-* Some reddit posts don't work, may be due to having dots and other characters in the title
-* Simplify process
+* Some reddit posts don't work because they have wierd characters in their names.
